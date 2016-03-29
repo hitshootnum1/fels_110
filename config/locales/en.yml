@@ -1,4 +1,5 @@
 en:
+  sure?: "Are you sure?"
   hello: "Hello world"
   base_title: "Ruby on Rails Tutorial Sample App"
   application_name: "E-Learning Program"
@@ -8,6 +9,7 @@ en:
   by: "by"
   home: "Home"
   help: "Help"
+  delete: "Delete"
   users: "Users"
   the_form_contain: "The form contains"
   log_in:
@@ -48,4 +50,5 @@ en:
     update_error: "Update error"
     edit_avatar: "Edit Avatar"
     save_changes: "Save changes"
+    all: "All Users"
 
