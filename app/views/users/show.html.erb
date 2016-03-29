@@ -1,0 +1,26 @@
+<% provide :title, @user.name %>
+<div class="row">
+  <aside class="col-md-4">
+    <section class="user-info">
+      <h1>
+        <%= @user.name %>
+      </h1>
+      <div class="user-image">
+        <%= @user.avatar? ? image_tag(@user.avatar) : link_to(t("user.no_avatar"), "#")  %>
+      </div>
+    </section>
+  </aside>
+  <div class="col-md-8">
+    <div class="user-button col-md-offset-5">
+      <button class="btn btn-lg btn-default">
+        <%= t "user.words_list" %>
+      </button>
+      <button class="btn btn-lg btn-default">
+        <%= t "user.categories" %>
+      </button>
+    </div>
+    <div class="user-activities">
+      <h1><%= t "user.activities" %></h1>
+    </div>
+  </div>
+</div>
