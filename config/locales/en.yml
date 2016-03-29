@@ -14,6 +14,7 @@ en:
     string: "Log in"
     success: "Log in success"
     invalid: "Invalid email/password"
+    please: "Log in please"
   log_out:
     string: "Log out"
     info: "Log out success"
@@ -41,4 +42,10 @@ en:
     words_list: "Words List"
     categories: "Categories"
     activities: "Activities"
+    edit: "Edit User"
+    avatar_updated: "Avatar updated"
+    info_updated: "Information updated"
+    update_error: "Update error"
+    edit_avatar: "Edit Avatar"
+    save_changes: "Save changes"
 

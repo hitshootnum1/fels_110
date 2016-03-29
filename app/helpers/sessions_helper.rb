@@ -1,4 +1,5 @@
 module SessionsHelper
+
   def log_in user
     session[:user_id] = user.id
   end
@@ -13,7 +14,28 @@ module SessionsHelper
     end
   end
 
+  def current_user? user
+    user == current_user
+  end
+
   def logged_in?
     current_user.present?
+  end
+
+  def logged_in_user
+    unless logged_in?
+      store_location
+      flash[:danger] = t "log_in.please"
+      redirect_to login_path
+    end
+  end
+
+  def correct_user
+    @user = User.find_by id: params[:id]
+    redirect_to root_path unless current_user? @user
+  end
+
+  def store_location
+    session[:forwarding_url] = request.url if request.get?
   end
 end
