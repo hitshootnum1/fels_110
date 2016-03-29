@@ -36,4 +36,9 @@ en:
   user:
     profile: "Profile"
     settings: "Settings"
+    no_avatar: "User has no avatar, click to add"
+    doesnt_exist: "User doesn't exist"
+    words_list: "Words List"
+    categories: "Categories"
+    activities: "Activities"
 
