@@ -8,11 +8,32 @@ en:
   by: "by"
   home: "Home"
   help: "Help"
-  users: "Help"
-  log_in: "Log in"
+  users: "Users"
+  the_form_contain: "The form contains"
+  log_in:
+    string: "Log in"
+    success: "Log in success"
+    invalid: "Invalid email/password"
+  log_out:
+    string: "Log out"
+    info: "Log out success"
   get_help: "Get help E-Learning application"
   welcome: "Welcome to the E-Learning app"
   home_page_welcome: "This is the home page for the E-Learning Application"
-  sign_up_now: "Sign up now!"
+  sign_up:
+    string: "Sign up"
+    now: "Sign up now!"
+    create: "Account created"
+    error: "Account Created Error"
   e_learning: "E_Learning"
   framgia: "Framgia"
+  error: "error"
+  password:
+    confirmation: "Confirmation"
+  account:
+    string: "Account"
+    create: "Create account"
+  user:
+    profile: "Profile"
+    settings: "Settings"
+
