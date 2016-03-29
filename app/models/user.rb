@@ -8,6 +8,8 @@ class User < ActiveRecord::Base
   has_many :activities
   has_many :lessons
 
+  mount_uploader :avatar, AvatarUploader
+
   validates :name, presence: true, length: {maximum: 50}
   validates :email, presence: true, length: {maximum: 150},
     uniqueness: {case_sensitive: false}

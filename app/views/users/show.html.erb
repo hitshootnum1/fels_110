@@ -6,7 +6,7 @@
         <%= @user.name %>
       </h1>
       <div class="user-image">
-        <%= @user.avatar? ? image_tag(@user.avatar) : link_to(t("user.no_avatar"), "#")  %>
+        <%= @user.avatar? ? image_tag(@user.avatar) : link_to(t("user.no_avatar"), edit_user_path)  %>
       </div>
     </section>
   </aside>
