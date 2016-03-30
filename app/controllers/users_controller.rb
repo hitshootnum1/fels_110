@@ -2,9 +2,10 @@ class UsersController < ApplicationController
 
   before_action :logged_in_user, only: [:edit, :update]
   before_action :correct_user, only: [:edit, :update]
+  before_action :find_user, only: [:following, :followers, :show]
 
   def index
-    @users = User.paginate(page: params[:page])
+    @users = User.paginate page: params[:page]
   end
 
   def new
@@ -23,10 +24,14 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find_by id: params[:id]
     unless @user
       flash[:danger] = t "user.doesnt_exist"
       redirect_to root_url
+    end
+    if params[:option].present?
+      @option = params[:option]
+      @users = @user.send(@option).paginate page: params[:page]
+      @title = t "user.#{@option}"
     end
   end
 
@@ -47,5 +52,9 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit :name, :email, :password,
       :password_confirmation, :avatar
+  end
+
+  def find_user
+    @user = User.find_by id: params[:id]
   end
 end
