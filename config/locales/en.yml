@@ -51,4 +51,9 @@ en:
     edit_avatar: "Edit Avatar"
     save_changes: "Save changes"
     all: "All Users"
+    isnt_authorized: "You dont have authorization to do it"
+    follow: "follow"
+    unfollow: "unfollow"
+    following: "following"
+    followers: "followers"
 

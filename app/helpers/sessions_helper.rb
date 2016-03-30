@@ -32,7 +32,10 @@ module SessionsHelper
 
   def correct_user
     @user = User.find_by id: params[:id]
-    redirect_to root_path unless current_user? @user
+    unless current_user? @user
+      flash[:danger] = t "user.isnt_authorized"
+      redirect_to root_path
+    end
   end
 
   def store_location
