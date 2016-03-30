@@ -65,6 +65,19 @@ en:
     created: "Category Created!"
     created_error: "Category Not Created!"
     all: "All Categories"
+    choose: "Choose Category"
   lession:
     take: "Take Lession"
+  word:
+    new: "New Word"
+    content: "Word Content"
+    answer: "Word Answers"
+    create: "Create Word"
+    not_create: "Create Word Error"
+    add_answer: "Add Answer"
+    choose_number: "Choose number of answers"
+    ok: "Ok"
+    remove: "Remove"
+    correct: "Correct"
+    only_one: "Only One Answer Correct"
 
