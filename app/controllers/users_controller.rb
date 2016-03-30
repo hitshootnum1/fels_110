@@ -54,7 +54,4 @@ class UsersController < ApplicationController
       :password_confirmation, :avatar
   end
 
-  def find_user
-    @user = User.find_by id: params[:id]
-  end
 end

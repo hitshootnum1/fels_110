@@ -41,4 +41,15 @@ module SessionsHelper
   def store_location
     session[:forwarding_url] = request.url if request.get?
   end
+
+  def find_user
+    @user = User.find_by id: params[:id]
+  end
+
+  def admin_user
+    unless current_user.admin?
+      flash[:danger] = t "user.isnt_permission"
+      redirect_to root_path
+    end
+  end
 end
