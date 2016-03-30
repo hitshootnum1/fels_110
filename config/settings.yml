@@ -1,3 +1,6 @@
 category:
   image_width: 300
   image_height: 200
+
+zero: 0
+one: 1

@@ -65,4 +65,6 @@ en:
     created: "Category Created!"
     created_error: "Category Not Created!"
     all: "All Categories"
+  lession:
+    take: "Take Lession"
 
