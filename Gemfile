@@ -16,6 +16,7 @@ gem "faker", "1.4.2"
 gem "carrierwave", "0.10.0"
 gem "mini_magick", "3.8.0"
 gem "sdoc", "~> 0.4.0", group: :doc
+gem "config"
 
 group :development, :test do
   gem "byebug"

@@ -9,9 +9,11 @@ Rails.application.routes.draw do
 
   resources :users
   resources :relationships, only: [:create, :destroy]
+  resources :categories, only: [:index, :show]
 
   namespace :admin do
     resources :users, only: :destroy
     resources :categories, only: [:new, :create]
   end
+
 end
