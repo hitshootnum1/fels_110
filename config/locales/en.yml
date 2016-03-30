@@ -59,4 +59,10 @@ en:
     followers: "followers"
     deleted: "User deleted"
     deleted_error: "User delete error"
+  category:
+    new: "New Category"
+    create: "Create Category"
+    created: "Category Created!"
+    created_error: "Category Not Created!"
+    all: "All Categories"
 
