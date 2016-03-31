@@ -1,3 +1,5 @@
+lesson:
+  limit: 20
 category:
   image_width: 300
   image_height: 200

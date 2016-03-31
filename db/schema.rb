@@ -33,16 +33,16 @@ ActiveRecord::Schema.define(version: 20160328092143) do
   add_index "categories", ["name"], name: "index_categories_on_name"
 
   create_table "lesson_words", force: :cascade do |t|
-    t.integer  "user_id"
     t.integer  "lesson_id"
+    t.integer  "word_id"
     t.integer  "word_answer_id"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
   end
 
   add_index "lesson_words", ["lesson_id"], name: "index_lesson_words_on_lesson_id"
-  add_index "lesson_words", ["user_id"], name: "index_lesson_words_on_user_id"
   add_index "lesson_words", ["word_answer_id"], name: "index_lesson_words_on_word_answer_id"
+  add_index "lesson_words", ["word_id"], name: "index_lesson_words_on_word_id"
 
   create_table "lessons", force: :cascade do |t|
     t.integer  "result"

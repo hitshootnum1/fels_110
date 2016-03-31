@@ -1,0 +1,6 @@
+<% if @lesson.result %>
+  <h1><%= t "lesson.finish" %></h1>
+<% else %>
+  <h1><%= @lesson.id %></h1>
+  <h1><%= t "lesson.not_finish" %></h1>
+<% end %>

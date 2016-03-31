@@ -66,8 +66,13 @@ en:
     created_error: "Category Not Created!"
     all: "All Categories"
     choose: "Choose Category"
-  lession:
-    take: "Take Lession"
+    not_found: "Category Not Found"
+  lesson:
+    take: "Take Lesson"
+    create: "Lesson Created"
+    not_create: "Lesson Not Created"
+    not_finish: "Do Lesson"
+    finish: "Show Result"
   word:
     new: "New Word"
     content: "Word Content"
@@ -80,4 +85,5 @@ en:
     remove: "Remove"
     correct: "Correct"
     only_one: "Only One Answer Correct"
+    not_found: "Lesson Not Found"
 
