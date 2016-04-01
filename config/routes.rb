@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   resources :users
   resources :relationships, only: [:create, :destroy]
   resources :categories, only: [:index, :show]
-  resources :lessons, only: [:create, :show]
+  resources :lessons, only: [:create, :show, :update]
 
   namespace :admin do
     resources :users, only: :destroy

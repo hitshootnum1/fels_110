@@ -1,0 +1,17 @@
+<div class="row lesson-word-answer">
+  <div class="col-md-3">
+  <h2><%= "(#{index}), #{lesson_word.word.content}" %></h2>
+  </div>
+  <div class="col-md-3 col-md-offset-3">
+    <% ff.object.word.answers.each do |answer| %>
+    <div class="row">
+      <div class="col-md-6">
+        <%= ff.radio_button :word_answer_id, answer.id %>
+      </div>
+      <div class="col-md-6">
+        <%= answer.content %>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>

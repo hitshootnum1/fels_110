@@ -73,6 +73,10 @@ en:
     not_create: "Lesson Not Created"
     not_finish: "Do Lesson"
     finish: "Show Result"
+    done: "Done"
+    success: "Lesson Finish"
+    danger: "Lesson Finish Error"
+    score: "Your Score"
   word:
     new: "New Word"
     content: "Word Content"
