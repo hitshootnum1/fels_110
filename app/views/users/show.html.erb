@@ -26,6 +26,10 @@
         </div>
         <div class="user-activities">
           <h1><%= t "user.activities" %></h1>
+          <ol class="activities">
+            <%= render @feed_items %>
+          </ol>
+          <%= will_paginate @feed_items %>
         </div>
       <% elsif @option.present? %>
         <%= render "show_follow" %>

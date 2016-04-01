@@ -9,6 +9,7 @@ class Lesson < ActiveRecord::Base
   accepts_nested_attributes_for :lesson_words
   before_create :create_words
   before_update :update_result
+  after_create :create_activity
 
   private
   def create_words
@@ -22,5 +23,9 @@ class Lesson < ActiveRecord::Base
   def update_result
     self.result = WordAnswer.correct_word(
       self.lesson_words.map &:word_answer_id).count
+  end
+
+  def create_activity
+    Activity.create! user_id: self.user.id, lesson_id: self.id
   end
 end

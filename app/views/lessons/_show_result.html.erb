@@ -14,9 +14,7 @@
           <%= correct_answer lesson_word.word %>
         </div>
         <div class="col-md-2">
-          <% if lesson_word.word_answer.present? %>
-            <%= lesson_word.word_answer.content %>
-          <% end %>
+          <%= lesson_word.word_answer.content if lesson_word.word_answer.present? %>
         </div>
         <div class="col-md-2">
           <% if lesson_word.word_answer.blank? || !lesson_word.word_answer.correct %>

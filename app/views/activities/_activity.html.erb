@@ -1,0 +1,17 @@
+<li id="activity-<%= activity.id %>">
+  <%= link_to image_tag(
+    activity.user.avatar, size: "#{Settings.avatar_size}"),
+    activity.user, class: "avatar" %>
+  <span class="user"><%= link_to activity.user.name, activity.user %></span>
+  <span class="title">
+    <strong>
+      <%= t "user.has_learned" %>
+      <%= "#{activity.lesson.result}/#{activity.lesson.total}" %>
+      <%= t "word.plural_in" %>
+      <%= link_to activity.lesson.category.name, activity.lesson.category %>
+    </strong>
+  </span>
+  <span class="timestamp">
+    <%= time_ago_in_words activity.created_at %>
+  </span>
+</li>

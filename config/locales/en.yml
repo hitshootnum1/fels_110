@@ -59,6 +59,7 @@ en:
     followers: "followers"
     deleted: "User deleted"
     deleted_error: "User delete error"
+    has_learned: "User had learned "
   category:
     new: "New Category"
     create: "Create Category"
@@ -78,6 +79,7 @@ en:
     danger: "Lesson Finish Error"
     score: "Your Score"
   word:
+    plural_in: "words_in "
     new: "New Word"
     content: "Word Content"
     answer: "Word Answers"
