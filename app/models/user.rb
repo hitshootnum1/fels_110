@@ -31,6 +31,11 @@ class User < ActiveRecord::Base
     self.following.include? other_user
   end
 
+  def feeds
+    Activity.following_activities(Relationship.following_user(
+      id).pluck(:followed_id).push id).order created_at: :desc
+  end
+
   private
   def downcase_email
     self.email = email.downcase
