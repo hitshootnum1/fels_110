@@ -7,3 +7,7 @@ category:
 zero: 0
 one: 1
 two: 2
+word_filter:
+  - learned
+  - not_learned
+  - all_words

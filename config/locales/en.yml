@@ -61,6 +61,7 @@ en:
     deleted_error: "User delete error"
     has_learned: "User had learned "
   category:
+    plural: "Categories"
     new: "New Category"
     create: "Create Category"
     created: "Category Created!"
@@ -68,6 +69,7 @@ en:
     all: "All Categories"
     choose: "Choose Category"
     not_found: "Category Not Found"
+    select: "Select Category"
   lesson:
     take: "Take Lesson"
     create: "Lesson Created"
@@ -79,6 +81,7 @@ en:
     danger: "Lesson Finish Error"
     score: "Your Score"
   word:
+    plural: "Words"
     plural_in: "words_in "
     new: "New Word"
     content: "Word Content"
@@ -92,4 +95,9 @@ en:
     correct: "Correct"
     only_one: "Only One Answer Correct"
     not_found: "Lesson Not Found"
+    filter:
+      learned: "Learned"
+      not_learned: "Not Learned"
+      all_words: "All"
+  search: "Search"
 

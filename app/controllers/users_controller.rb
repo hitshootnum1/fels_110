@@ -3,7 +3,6 @@ class UsersController < ApplicationController
   before_action :logged_in_user, only: [:edit, :update]
   before_action :correct_user, only: [:edit, :update]
   before_action :find_user, only: [:following, :followers, :show]
-  before_action :find_activities, only: :show
 
   def index
     @users = User.paginate page: params[:page]
@@ -25,6 +24,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    @feed_items = current_user.feeds.paginate page: params[:page]
     unless @user
       flash[:danger] = t "user.doesnt_exist"
       redirect_to root_url

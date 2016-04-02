@@ -31,7 +31,7 @@ class User < ActiveRecord::Base
     self.following.include? other_user
   end
 
-  def feed
+  def feeds
     Activity.following_activities Relationship.following_user(
       id).pluck(:followed_id).push(id)
   end

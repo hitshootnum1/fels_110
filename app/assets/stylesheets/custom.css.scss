@@ -283,3 +283,35 @@ div.lession{
     margin-top: 5px;
   }
 }
+
+/* Words */
+
+.words{
+  list-style: none;
+  padding: 0;
+  padding-top: 30px;
+  li {
+    padding: 10px 0;
+    border-top: 1px solid #e8e8e8;
+    div.word-left-side{
+      float: left;
+    }
+    div.word-right-side{
+      text-align: right;
+    }
+  }
+}
+
+div.list-center{
+  margin-left: 30px;
+}
+
+div.word-filter-form{
+  label{
+    margin-bottom: 0px;
+    margin-top: 5px;
+  }
+  input[type="radio"]{
+    width: 30px;
+  }
+}
