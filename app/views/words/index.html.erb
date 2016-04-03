@@ -4,7 +4,7 @@
 		<%= form_for :word, url: words_path, method: :get do |f| %>
 			<div class="col-md-5 form-group">
 				<%= collection_select :word, :category_id, @categories, :id, :name,
-				{prompt: t("category.select")}, {class: "form-control"} %>
+				{prompt: t("category.select")}, class: "form-control" %>
 			</div>
 			<div class="col-md-7">
 				<% Settings.word_filter.each do |ft| %>

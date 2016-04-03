@@ -10,6 +10,7 @@ en:
   home: "Home"
   help: "Help"
   delete: "Delete"
+  edit: "Edit"
   users: "Users"
   the_form_contain: "The form contains"
   log_in:
@@ -61,6 +62,8 @@ en:
     deleted_error: "User delete error"
     has_learned: "User had learned "
   category:
+    page: "Categories Page"
+    index: "Category Index Page"
     plural: "Categories"
     new: "New Category"
     create: "Create Category"
@@ -81,12 +84,16 @@ en:
     danger: "Lesson Finish Error"
     score: "Your Score"
   word:
+    page: "Words Page"
+    index: "Word Index Page"
     plural: "Words"
     plural_in: "words_in "
     new: "New Word"
+    edit: "Edit Word"
+    update: "Update Word"
+    create: "Create Word"
     content: "Word Content"
     answer: "Word Answers"
-    create: "Create Word"
     not_create: "Create Word Error"
     add_answer: "Add Answer"
     choose_number: "Choose number of answers"
@@ -95,9 +102,12 @@ en:
     correct: "Correct"
     only_one: "Only One Answer Correct"
     not_found: "Lesson Not Found"
+    placeholder_content: "Fill The Word Content"
     filter:
       learned: "Learned"
       not_learned: "Not Learned"
       all_words: "All"
   search: "Search"
-
+  admin:
+    page: "Admin Page"
+    word_index: "Admin Word Index"

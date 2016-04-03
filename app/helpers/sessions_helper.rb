@@ -46,6 +46,10 @@ module SessionsHelper
     @user = User.find_by id: params[:id]
   end
 
+  def admin_user?
+    current_user.admin? if logged_in?
+  end
+
   def admin_user
     unless current_user.admin?
       flash[:danger] = t "user.isnt_permission"

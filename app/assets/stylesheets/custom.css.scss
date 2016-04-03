@@ -295,6 +295,9 @@ div.lession{
     border-top: 1px solid #e8e8e8;
     div.word-left-side{
       float: left;
+      a{
+        padding-left: 10px;
+      }
     }
     div.word-right-side{
       text-align: right;

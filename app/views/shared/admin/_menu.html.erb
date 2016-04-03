@@ -1,0 +1,18 @@
+<li class="dropdown active">
+  <a class="dropdown-toggle" data-toggle="dropdown" href="">
+    <%= t "category.page" %><span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu">
+    <li><%= link_to t "category.index" %></li>
+    <li><%= link_to t("category.new"), new_admin_category_path %></li>
+  </ul>
+</li>
+<li class="dropdown active">
+  <a class="dropdown-toggle" data-toggle="dropdown" href="">
+    <%= t "word.page" %><span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu">
+    <li><%= link_to t("word.index"), admin_words_path %></li>
+    <li><%= link_to t("word.new"), new_admin_word_path %></li>
+  </ul>
+</li>

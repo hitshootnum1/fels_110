@@ -1,7 +1,19 @@
-class Admin::WordsController < ApplicationController
+class Admin::WordsController < Admin::DashboardController
 
-  before_action :logged_in_user
-  before_action :admin_user
+  def index
+    if params[:word].present?
+      content = params[:word][:content]
+      if params[:word][:category_id].present?
+        @category = Category.find_by id: params[:word][:category_id]
+        @words = @category.words.where "content like ?", "%#{content}%"
+      else
+        @words = Word.where "content like ?", "%#{content}%"
+      end
+    end
+    @words ||=  Word.all
+    @words = @words.paginate page: params[:page]
+    @categories = Category.all
+  end
 
   def new
     @word = Word.new
@@ -17,6 +29,17 @@ class Admin::WordsController < ApplicationController
       flash[:danger] = t "word.not_create"
       redirect_to new_admin_word_path
     end
+  end
+
+  def edit
+    @word = Word.find_by id: params[:id]
+    @categories = Category.all
+  end
+
+  def update
+  end
+
+  def destroy
   end
 
   private

@@ -12,10 +12,11 @@ Rails.application.routes.draw do
   resources :categories, only: [:index, :show]
   resources :lessons, only: [:create, :show, :update]
   resources :words, only: :index
-  
+
   namespace :admin do
+    get "/" => "dashboard#index"
     resources :users, only: :destroy
     resources :categories, only: [:new, :create]
-    resources :words, only: [:new, :create]
+    resources :words, only: [:new, :create, :index, :edit, :update, :destroy]
   end
 end

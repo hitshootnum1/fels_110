@@ -1,7 +1,5 @@
-class Admin::UsersController < ApplicationController
+class Admin::UsersController < Admin::DashboardController
 
-  before_action :logged_in_user
-  before_action :admin_user
   before_action :find_user
 
   def destroy
