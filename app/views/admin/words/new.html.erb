@@ -4,7 +4,8 @@
     <%= render "shared/error_messages", object: @word %>
     <div class="col-md-4">
       <h2><%= t "category.choose" %></h2>
-      <%= collection_select :word, :category_id, @categories, :id, :name, prompt: true %>
+      <%= collection_select :word, :category_id, @categories, :id, :name,
+        prompt: true %>
     </div>
     <div class="col-md-3">
       <h2><%= t "word.content" %></h2>

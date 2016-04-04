@@ -1,7 +1,4 @@
-class Admin::WordsController < ApplicationController
-
-  before_action :logged_in_user
-  before_action :admin_user
+class Admin::WordsController < Admin::DashboardController
 
   def new
     @word = Word.new

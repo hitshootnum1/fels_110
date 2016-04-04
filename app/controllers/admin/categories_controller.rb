@@ -1,7 +1,4 @@
-class Admin::CategoriesController < ApplicationController
-
-  before_action :logged_in_user
-  before_action :admin_user
+class Admin::CategoriesController < Admin::DashboardController
 
   def new
     @category = Category.new
