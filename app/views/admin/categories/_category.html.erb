@@ -1,0 +1,21 @@
+<li id="category-<%= category.id %>">
+  <%= image_tag category.image,
+    width: Settings.category.image_mini_width,
+    height: Settings.category.image_mini_height %>
+  <span class="name">
+    <%= link_to category.name, category %>
+    <% if admin_user? %>
+      <%= link_to t("delete"), admin_category_path(category),
+        method: :delete, data: {confirm: t("sure?")} %>
+      | <%= link_to t("edit"), edit_admin_category_path(category) %>
+    <% end %>
+  </span>
+  <span class="title">
+    <strong>
+      <aside><%= category.title %></aside>
+    </strong>
+  </span>
+  <span class="timestamp">
+    <%= time_ago_in_words category.created_at %>
+  </span>
+</li>

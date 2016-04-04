@@ -1,20 +1,3 @@
 <% provide :title, t("category.new") %>
-<h1><%= yield :title %></h1>
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <%= form_for @category, url: admin_categories_path do |f| %>
-      <%= render "shared/error_messages", object: @category %>
-      <%= f.label :name %>
-      <%= f.text_field :name, class: "form-control" %>
-
-      <%= f.label :title %>
-      <%= f.text_area :title, class: "form-control" %>
-
-      <span class="image">
-        <%= f.file_field :image, accept: 'image/jpeg,image/gif,image/png' %>
-      </span>
-
-      <%= f.submit t("category.create"), class: "btn btn-primary" %>
-    <% end %>
-  </div>
-</div>
+<% provide :action, t("category.create") %>
+<%= render "category_form" %>

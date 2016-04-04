@@ -2,6 +2,8 @@ avatar_size: 50
 lesson:
   limit: 20
 category:
+  image_mini_width: 60
+  image_mini_height: 40
   image_width: 300
   image_height: 200
 zero: 0

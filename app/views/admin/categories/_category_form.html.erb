@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for [:admin, @category] do |f| %>
+      <%= render "shared/error_messages", object: @category %>
+      <%= f.label :name %>
+      <%= f.text_field :name, class: "form-control" %>
+
+      <%= f.label :title %>
+      <%= f.text_area :title, class: "form-control" %>
+
+      <span class="image">
+        <%= f.file_field :image, accept: "image/jpeg,image/gif,image/png" %>
+      </span>
+
+      <%= f.submit yield(:action), class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

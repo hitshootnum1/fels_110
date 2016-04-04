@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   namespace :admin do
     get "/" => "dashboard#index"
     resources :users, only: :destroy
-    resources :categories, only: [:new, :create]
-    resources :words, only: [:new, :create, :index, :edit, :update, :destroy]
+    resources :categories, except: :show
+    resources :words, except: :show
   end
 end
