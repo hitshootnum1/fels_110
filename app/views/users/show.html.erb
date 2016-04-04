@@ -6,7 +6,8 @@
         <%= @user.name %>
       </h1>
       <div class="user-image">
-        <%= @user.avatar? ? image_tag(@user.avatar, size: "50") : link_to(t("user.no_avatar"), edit_user_path)  %>
+        <%= @user.avatar? ? image_tag(@user.avatar, size: Settings.avatar_size)
+          : link_to(t("user.no_avatar"), edit_user_path(@user)) %>
       </div>
     </section>
     <section class="user-stats">
@@ -16,13 +17,18 @@
   <div class="col-md-8">
     <% if logged_in? %>
       <% if current_user? @user %>
-        <div class="user-button col-md-offset-4">
-          <button class="btn btn-lg btn-default">
-            <%= t "user.words_list" %>
-          </button>
-          <button class="btn btn-lg btn-default">
-            <%= t "user.categories" %>
-          </button>
+        <div class="row">
+          <div class="user-button col-md-3 col-md-offset-3">
+            <%= button_to words_path, class: "btn btn-lg btn-default",
+              method: :get do %>
+              <%= t "user.words_list" %>
+            <% end %>
+          </div>
+          <div class= "user-button col-md-3">
+            <%= button_to categories_path, class: "btn btn-lg btn-default", method: :get do %>
+              <%= t "user.categories" %>
+            <% end %>
+          </div>
         </div>
         <div class="user-activities">
           <h1><%= t "user.activities" %></h1>

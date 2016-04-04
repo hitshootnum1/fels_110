@@ -8,6 +8,8 @@
       <%= link_to t("delete"), admin_category_path(category),
         method: :delete, data: {confirm: t("sure?")} %>
       | <%= link_to t("edit"), edit_admin_category_path(category) %>
+      | <%= link_to t("category.new"), new_admin_word_path(
+        category_id: category.id) %>
     <% end %>
   </span>
   <span class="title">

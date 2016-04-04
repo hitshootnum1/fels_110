@@ -1,6 +1,6 @@
 <li id="activity-<%= activity.id %>">
-  <%= link_to image_tag(
-    activity.user.avatar, size: Settings.avatar_size),
+  <%= link_to image_avatar(
+    activity.user, Settings.user.avatar_size),
     activity.user, class: "avatar" %>
   <span class="user"><%= link_to activity.user.name, activity.user %></span>
   <span class="title">
@@ -8,7 +8,8 @@
       <%= t "user.has_learned" %>
       <%= "#{activity.lesson.result}/#{activity.lesson.total}" %>
       <%= t "word.plural_in" %>
-      <%= link_to activity.lesson.category.name, activity.lesson.category %>
+      <%= link_to activity.lesson.category.name, category_path(
+        activity.lesson.category) %>
     </strong>
   </span>
   <span class="timestamp">
