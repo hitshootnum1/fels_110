@@ -17,6 +17,6 @@ Rails.application.routes.draw do
     get "/" => "dashboard#index"
     resources :users, only: :destroy
     resources :categories, only: [:new, :create]
-    resources :words, only: [:new, :create]
+    resources :words, only: [:new, :create, :index, :edit, :update, :destroy]
   end
 end

@@ -1,0 +1,24 @@
+<div class="row">
+  <%= form_for [:admin, @word] do |f| %>
+    <%= render "shared/error_messages", object: @word %>
+    <div class="col-md-4">
+      <h2><%= t "category.choose" %></h2>
+      <%= collection_select :word, :category_id, @categories, :id, :name,
+        {prompt: t("category.select")}, class: "form-control" %>
+    </div>
+    <div class="col-md-3">
+      <h2><%= t "word.content" %></h2>
+      <%= f.text_field :content, class: "form-control" %>
+      <%= f.submit yield(:action), class: "btn btn-primary" %>
+    </div>
+    <div class="col-md-5 check-box-answer">
+      <h2><%= t "word.answers" %></h2>
+      <p><%= link_to_add_fields t("word.add_answer"), f, :answers %></p>
+      <div id="answers-word">
+        <%= f.fields_for :answers do |answer| %>
+          <%= render "answer_fields", f: answer %>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>
