@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-  before_action :logged_in_user, only: [:edit, :update]
+  before_action :logged_in_user, except: [:new, :create]
   before_action :correct_user, only: [:edit, :update]
   before_action :find_user, only: [:following, :followers, :show]
   before_action :find_activities, only: :show
@@ -49,7 +49,6 @@ class UsersController < ApplicationController
   end
 
   private
-
   def user_params
     params.require(:user).permit :name, :email, :password,
       :password_confirmation, :avatar

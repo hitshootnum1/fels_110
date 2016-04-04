@@ -1,4 +1,7 @@
 class SessionsController < ApplicationController
+
+  before_action :guest
+
   def new
   end
 

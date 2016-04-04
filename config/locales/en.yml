@@ -60,6 +60,7 @@ en:
     deleted: "User deleted"
     deleted_error: "User delete error"
     has_learned: "User had learned "
+    already_logged: "You've already loggged"
   category:
     placeholder_name: "Fill Category Name"
     page: "Categories Page"

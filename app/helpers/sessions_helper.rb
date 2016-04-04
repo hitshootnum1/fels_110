@@ -38,6 +38,13 @@ module SessionsHelper
     end
   end
 
+  def guest
+    if logged_in?
+      flash[:danger] = t "user.already_logged"
+      redirect_to root_path
+    end
+  end
+
   def store_location
     session[:forwarding_url] = request.url if request.get?
   end
@@ -55,5 +62,9 @@ module SessionsHelper
 
   def admin_user?
     current_user.admin? if logged_in?
+  end
+
+  def normal_user?
+    !current_user.admin? if logged_in?
   end
 end
