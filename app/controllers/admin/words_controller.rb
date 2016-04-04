@@ -3,6 +3,7 @@ class Admin::WordsController < Admin::DashboardController
   before_action :filter_words, only: :index
   before_action :find_word, only: [:edit, :update, :destroy]
   before_action :load_categories, only: [:index, :new, :edit]
+  before_action :find_category, only: :new
 
   def index
     @words ||=  Word.all
@@ -11,6 +12,7 @@ class Admin::WordsController < Admin::DashboardController
 
   def new
     @word = Word.new
+    @word.category_id = @category.id if @category
   end
 
   def create
@@ -48,6 +50,10 @@ class Admin::WordsController < Admin::DashboardController
   end
 
   private
+  def find_category
+    @category = Category.find_by id: params[:category_id]
+  end
+
   def load_categories
     @categories = Category.all
   end
