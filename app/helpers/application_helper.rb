@@ -9,13 +9,18 @@ module ApplicationHelper
     end
   end
 
-  def image_category category
-    link_to image_tag(category.image, width: "#{Settings.category.image_width}",
-      height: "#{Settings.category.image_height}"), category
+  def image_category category, options = {}
+    options = {width: Settings.category.image_width,
+      height: Settings.category.image_height}.merge(options)
+    width = options[:width]
+    height = options[:height]
+    path = category.image? ? category.image : Settings.category.default_image_path
+    image_tag path, width: "#{width}", height: "#{height}"
   end
 
   def words_category category
-    content = link_to(category.name, category) << content_tag(:p, category.title)
+    content = link_to(category.name, user_category_path(category)) <<
+      content_tag(:p, category.title)
     content_tag :h2, content
   end
 

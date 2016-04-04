@@ -1,7 +1,0 @@
-<% if @lesson.result %>
-  <h1><%= t "lesson.finish" %></h1>
-  <%= render "show_result" %>
-<% else %>
-  <h1><%= @lesson.id %></h1>
-  <%= render "do_lesson" %>
-<% end %>

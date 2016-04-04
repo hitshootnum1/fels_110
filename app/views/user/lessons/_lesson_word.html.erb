@@ -1,0 +1,24 @@
+<div class="row lesson-word-answer">
+  <div class="col-md-3">
+  <h2><%= "(#{index}), #{lesson_word.word.content}" %></h2>
+  </div>
+  <div class="col-md-3 col-md-offset-3">
+    <% ff.object.word.answers.each do |answer| %>
+      <div class="row">
+        <div class="col-md-6">
+          <%= ff.radio_button :word_answer_id, answer.id,
+            disabled: @disable_check %>
+        </div>
+        <div class="col-md-6">
+          <% if @disable_check && answer.correct %>
+            <span class="label label-success"><%= answer.content %></span>
+          <% elsif @disable_check && @answer_ids.include?(answer.id) %>
+            <span class="label label-danger"><%= answer.content %></span>
+          <% else %>
+            <span class="label label-default"><%= answer.content %></span>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

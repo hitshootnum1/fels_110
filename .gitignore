@@ -22,6 +22,7 @@ pickle-email-*.html
 config/settings.local.yml
 config/settings/*.local.yml
 config/environments/*.local.yml
+app/assets/images
 .DS_Store
 /.idea
 

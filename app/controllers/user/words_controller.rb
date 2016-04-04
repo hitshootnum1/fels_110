@@ -1,4 +1,4 @@
-class WordsController < ApplicationController
+class User::WordsController < User::DashboardController
 
   before_action :logged_in_user
   before_action :filter_words, only: :index

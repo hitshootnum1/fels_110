@@ -1,4 +1,4 @@
-class LessonsController < ApplicationController
+class User::LessonsController < User::DashboardController
 
   before_action :logged_in_user
   before_action :find_category, only: :create
@@ -8,7 +8,7 @@ class LessonsController < ApplicationController
     @lesson = current_user.lessons.new category_id: @category.id
     if @lesson.save
       flash[:success] = t "lesson.create"
-      redirect_to @lesson
+      redirect_to [:user, @lesson]
     else
       flash[:danger] = t "lesson.not_create"
       redirect_to root_url
@@ -16,12 +16,16 @@ class LessonsController < ApplicationController
   end
 
   def show
+    if @lesson.result?
+      @disable_check = true
+      @answer_ids = @lesson.answer_ids
+    end
   end
 
   def update
     if @lesson.update_attributes lesson_params
       flash[:success] = t "lesson.success"
-      render :show
+      redirect_to [:user, @lesson]
     else
       flash[:danger] = t "lesson.danger"
       redirect_to root_url
@@ -41,7 +45,7 @@ class LessonsController < ApplicationController
     @category = Category.find_by id: params[:category_id]
     unless @category
       flash[:danger] = t "category.not_found"
-      redirect_to categories_path
+      redirect_to user_categories_path
     end
   end
 

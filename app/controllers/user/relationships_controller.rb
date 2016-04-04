@@ -1,4 +1,4 @@
-class RelationshipsController < ApplicationController
+class User::RelationshipsController < User::DashboardController
 
   before_action :logged_in_user, only: [:create, :destroy]
 

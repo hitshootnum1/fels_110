@@ -11,6 +11,10 @@ class Lesson < ActiveRecord::Base
   before_update :update_result
   after_create :create_activity
 
+  def answer_ids
+    lesson_words.pluck :word_answer_id
+  end
+
   private
   def create_words
     category_size = self.category.words.count

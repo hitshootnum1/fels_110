@@ -1,4 +1,4 @@
-class CategoriesController < ApplicationController
+class User::CategoriesController < User::DashboardController
 
   before_action :logged_in_user
 

@@ -1,15 +1,16 @@
 <h1><%= t "word.plural" %></h1>
 <div class="row word-filter-form">
   <div class="col-md-6 col-md-offset-3">
-    <%= form_for :word, url: words_path, method: :get do |f| %>
+    <%= form_for :word, url: user_words_path, method: :get do |f| %>
       <div class="col-md-5 form-group">
         <%= collection_select :word, :category_id, @categories, :id, :name,
           {prompt: t("category.select")}, {class: "form-control"} %>
       </div>
       <div class="col-md-7">
         <% Settings.word_filter.each do |filter| %>
+          <%= f.radio_button :filter, "#{filter}",
+            checked: filter == Settings.word_filter[2] %>
           <%= f.label t "word.filter.#{filter}" %>
-          <%= f.radio_button :filter, "#{filter}" %>
         <% end %>
       </div>
       <div class="col-md-6 col-md-offset-3">

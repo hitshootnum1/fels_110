@@ -4,7 +4,7 @@
   </div>
   <div class="col-md-6">
     <div class="lession">
-      <%= link_to t("lesson.take"), lessons_path(category_id: @category.id),
+      <%= link_to t("lesson.take"), user_lessons_path(category_id: @category.id),
         method: :post, class: "link_button" if logged_in? %>
     </div>
     <%= content_category Settings.one, @category %>

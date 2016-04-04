@@ -10,8 +10,7 @@ class StaticPagesController < ApplicationController
 
   private
   def role_user_redirect
-    @user = current_user
-    redirect_to user_path @user if normal_user?
+    redirect_to user_path current_user if normal_user?
     redirect_to admin_path if admin_user?
   end
 end

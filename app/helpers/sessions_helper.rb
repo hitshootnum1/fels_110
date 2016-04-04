@@ -60,6 +60,17 @@ module SessionsHelper
     end
   end
 
+  def normal_user
+    unless normal_user?
+      flash[:danger] = t "user.isnt_permission"
+      redirect_to root_path
+    end
+  end
+
+  def general_user
+
+  end
+
   def admin_user?
     current_user.admin? if logged_in?
   end
