@@ -40,10 +40,22 @@ module ApplicationHelper
       render association.to_s.singularize + "_fields", f: builder
     end
     link_to name, "#", onclick: "add_fields(this,
-      \"#{association}\", \"#{j fields}\"); return false"
+    \"#{association}\", \"#{j fields}\"); return false"
   end
 
   def render_header
     render admin_user? ? "shared/layout/header/admin" : "shared/layout/header/user"
+  end
+
+  def answer_class_attr disable_check, answer, answer_ids
+    class_attr = "label label-"
+    if disable_check && answer.correct?
+      class_attr << "success"
+    elsif disable_check && answer_ids.include?(answer.id)
+      class_attr << "danger"
+    else
+      class_attr << "default"
+    end
+    content_tag :span, answer.content, class: "#{class_attr}"
   end
 end

@@ -4,14 +4,15 @@
   </div>
   <div class="col-md-3 col-md-offset-3">
     <% ff.object.word.answers.each do |answer| %>
-    <div class="row">
-      <div class="col-md-6">
-        <%= ff.radio_button :word_answer_id, answer.id %>
+      <div class="row">
+        <div class="col-md-6">
+          <%= ff.radio_button :word_answer_id, answer.id,
+            disabled: @disable_check %>
+        </div>
+        <div class="col-md-6">
+          <%= answer_class_attr @disable_check, answer, @answer_ids %>
+        </div>
       </div>
-      <div class="col-md-6">
-        <%= answer.content %>
-      </div>
-    </div>
     <% end %>
   </div>
 </div>

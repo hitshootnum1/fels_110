@@ -1,7 +1,20 @@
-<% if @lesson.result %>
-  <h1><%= t "lesson.finish" %></h1>
-  <%= render "show_result" %>
-<% else %>
-  <h1><%= @lesson.id %></h1>
-  <%= render "do_lesson" %>
-<% end %>
+<%= provide :title, @lesson.result? ? t("lesson.finish") :
+  t("lesson.not_finish") %>
+<h1><%= yield :title %></h1>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <h2>
+      <%= t "lesson.your_result", result: @lesson.result if @lesson.result? %>
+    </h2>
+    <%= form_for @lesson do |f| %>
+      <% @lesson.lesson_words.each.with_index do |lesson_word, index| %>
+        <%= f.fields_for :lesson_words, lesson_word do |ff| %>
+          <%= render "lesson_word", ff: ff, lesson_word: lesson_word,
+            index: index %>
+        <% end %>
+      <% end %>
+      <%= f.submit t("lesson.done"), class: "btn btn-primary" unless
+        @disable_check %>
+    <% end %>
+  </div>
+</div>
