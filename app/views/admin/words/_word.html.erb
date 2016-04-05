@@ -1,0 +1,11 @@
+<li class="word", id="word-<%= word.id %>">
+  <div class="word-left-side">
+    <%= word.content %>
+    <% if admin_user? %>
+      <%= link_to t("delete"), admin_word_path(word), method: :delete,
+        data: {confirm: t("sure?")} %>
+      | <%= link_to t("edit"), edit_admin_word_path(word) %>
+    <% end %>
+  </div>
+  <div class="word-right-side"><%= correct_answer word %></div>
+</li>

@@ -18,6 +18,7 @@ class User < ActiveRecord::Base
 
   before_save :downcase_email
   has_secure_password
+  scope :name_like, ->name{where "name like ?", "%#{name}%"}
 
   def follow other_user
     active_relationships.create followed_id: other_user.id

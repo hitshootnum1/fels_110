@@ -1,6 +1,7 @@
 class LessonsController < ApplicationController
 
   before_action :logged_in_user
+  before_action :trivial_user
   before_action :find_category, only: :create
   before_action :find_lesson, only: [:show, :update]
   before_action :correct_lesson, only: [:show, :update]
