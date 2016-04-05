@@ -10,8 +10,9 @@ module ApplicationHelper
   end
 
   def image_category category
-    link_to image_tag(category.image, width: "#{Settings.category.image_width}",
-      height: "#{Settings.category.image_height}"), category
+    path = category.image ? category.image : Settings.category.default_image_path
+    image_tag path, width: "#{Settings.category.image_width}",
+      height: "#{Settings.category.image_height}"
   end
 
   def image_avatar user, size

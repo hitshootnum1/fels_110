@@ -1,0 +1,20 @@
+<% provide :title, @user.name %>
+<div class="row">
+  <div class="col-md-6 col-md-offset-4">
+    <div class="col-md-3">
+      <%= image_avatar @user, Settings.user.avatar_large_size %>
+    </div>
+    <div class="col-md-6">
+      <aside>
+        <strong>
+          <%= t "created_at", created_at: @user.created_at.to_s %>
+        </strong>
+      </aside>
+      <br/>
+      <%= button_to [:admin, @user], method: :delete,
+        class: "btn btn-primary", data: {confirm: t("sure?")} do %>
+        <%= t "user.delete" %>
+      <% end %>
+    </div>
+  </div>
+</div>

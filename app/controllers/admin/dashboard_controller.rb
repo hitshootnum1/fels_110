@@ -5,5 +5,6 @@ class Admin::DashboardController < ApplicationController
   before_action :admin_user
 
   def index
+    redirect_to admin_categories_path
   end
 end

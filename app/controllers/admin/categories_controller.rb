@@ -1,11 +1,15 @@
 class Admin::CategoriesController < Admin::DashboardController
 
-  before_action :find_category, only: [:edit, :update, :destroy]
+  before_action :find_category, only: [:show, :edit, :update, :destroy]
   before_action :filter_category, only: :index
+  before_action :load_words, only: :show
 
   def index
     @categories ||= Category.all
     @categories = @categories.paginate page: params[:page]
+  end
+
+  def show
   end
 
   def new
@@ -60,5 +64,9 @@ class Admin::CategoriesController < Admin::DashboardController
 
   def category_params
     params.require(:category).permit :name, :title, :image
+  end
+
+  def load_words
+    @words = @category.words.paginate page: params[:page]
   end
 end

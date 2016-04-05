@@ -64,8 +64,16 @@ module SessionsHelper
     current_user.admin? if logged_in?
   end
 
+  def trivial_user
+    if admin_user?
+      flash[:danger] = t "user.trivial_only"
+      redirect_to root_path
+    end
+  end
+
   def home_page
-    redirect_to admin_path if admin_user?
-    redirect_to user_path current_user
+    if logged_in?
+      redirect_to(admin_user? ? admin_path : user_path(current_user))
+    end
   end
 end

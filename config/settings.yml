@@ -9,6 +9,7 @@ category:
 user:
   avatar_default_path: "user/avatar/cat.jpg"
   avatar_size: 50
+  avatar_large_size: 100
   avatar_mini_size: 20
 zero: 0
 one: 1
