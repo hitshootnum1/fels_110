@@ -1,4 +1,4 @@
-class User::UsersController < User::DashboardController
+class UsersController < ApplicationController
 
   before_action :logged_in_user, except: [:new, :create]
   before_action :normal_user, only: :index

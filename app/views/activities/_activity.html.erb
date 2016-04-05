@@ -8,7 +8,7 @@
       <%= t "user.has_learned" %>
       <%= "#{activity.lesson.result}/#{activity.lesson.total}" %>
       <%= t "word.plural_in" %>
-      <%= link_to activity.lesson.category.name, user_category_path(
+      <%= link_to activity.lesson.category.name, category_path(
         activity.lesson.category) %>
     </strong>
   </span>

@@ -60,6 +60,7 @@ en:
     deleted: "User deleted"
     deleted_error: "User delete error"
     has_learned: "User had learned "
+    already_logged: "You've already loggged"
   category:
     placeholder_name: "Fill Category Name"
     page: "Categories Page"
@@ -89,6 +90,7 @@ en:
     success: "Lesson Finish"
     danger: "Lesson Finish Error"
     score: "Your Score"
+    your_result: "Your result is: %{result}"
   word:
     page: "Words Page"
     index: "Word Index Page"
@@ -119,7 +121,7 @@ en:
       learned: "Learned"
       not_learned: "Not Learned"
       all_words: "All"
-    filter_title: "Cateogry: %{category_name}, Filter: %{filter_name}"
+    filter_title: "Category: %{category_name}, Filter: %{filter_name}"
   search: "Search"
   admin:
     page: "Admin Page"

@@ -7,7 +7,7 @@
       </h1>
       <div class="user-image">
         <%= @user.avatar? ? image_tag(@user.avatar, size: Settings.avatar_size)
-          : link_to(t("user.no_avatar"), edit_user_user_path(@user)) %>
+          : link_to(t("user.no_avatar"), edit_user_path(@user)) %>
       </div>
     </section>
     <section class="user-stats">
@@ -19,13 +19,13 @@
       <% if current_user? @user %>
         <div class="row">
           <div class="user-button col-md-3 col-md-offset-3">
-            <%= button_to user_words_path, class: "btn btn-lg btn-default",
+            <%= button_to words_path, class: "btn btn-lg btn-default",
               method: :get do %>
               <%= t "user.words_list" %>
             <% end %>
           </div>
           <div class= "user-button col-md-3">
-            <%= button_to user_categories_path, class: "btn btn-lg btn-default", method: :get do %>
+            <%= button_to categories_path, class: "btn btn-lg btn-default", method: :get do %>
               <%= t "user.categories" %>
             <% end %>
           </div>
