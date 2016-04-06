@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
 
   before_action :logged_in_user, except: [:new, :create]
-  before_action :normal_user, only: :index
   before_action :correct_user, only: [:edit, :update]
   before_action :find_user, only: [:following, :followers, :show]
   before_action :find_activities, only: :show

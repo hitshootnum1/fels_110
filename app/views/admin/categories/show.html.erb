@@ -1,0 +1,38 @@
+<% provide :title, @category.name %>
+<div class="row">
+  <div class="col-md-5">
+    <%= image_category @category %>
+  </div>
+  <div class="col-md-7">
+    <h2><%= @category.title %></h2>
+    <div class="row admin-show-category">
+      <div class="col-md-4">
+        <%= link_to t("category.edit"),
+          edit_admin_category_path(@category),
+          class: "link_button_category" %>
+      </div>
+      <div class="col-md-4">
+        <%= link_to t("category.delete"),
+          [:admin, @category], method: :delete,
+          class: "link_button_category", data: {confirm: t("sure?")} %>
+      </div>
+      <div class="col-md-4">
+        <%= link_to t("word.new"),
+          new_admin_word_path(category_id: @category.id),
+          class: "link_button_category" %>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-6 col-md-offset-5">
+    <ol class="words">
+      <li class="word">
+        <div class="word-left-side"><%= t "word.content" %></div>
+        <div class="word-right-side"><%= t "word.answer" %></div>
+      </li>
+      <%= render @words %>
+    </ol>
+    <%= will_paginate @words %>
+  </div>
+</div>

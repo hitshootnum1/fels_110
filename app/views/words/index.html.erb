@@ -8,8 +8,8 @@
       </div>
       <div class="col-md-7">
         <% Settings.word_filter.each do |filter| %>
-          <%= f.label t "word.filter.#{filter}" %>
           <%= f.radio_button :filter, "#{filter}" %>
+          <%= f.label t "word.filter.#{filter}" %>
         <% end %>
       </div>
       <div class="col-md-6 col-md-offset-3">
@@ -29,6 +29,10 @@
       <strong><%= pluralize @words.count, t("word.singular") %></strong>
     </h2>
     <ol class="words">
+      <li class="word">
+        <div class="word-left-side"><%= t "word.content" %></div>
+        <div class="word-right-side"><%= t "word.answer" %></div>
+      </li>
       <%= render @words %>
     </ol>
     <%= will_paginate @words, class: "pagination list-center" %>

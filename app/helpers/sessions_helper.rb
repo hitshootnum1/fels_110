@@ -53,7 +53,7 @@ module SessionsHelper
     @user = User.find_by id: params[:id]
   end
 
-  def admin_user
+  def verify_admin_user
     unless current_user.admin?
       flash[:danger] = t "user.isnt_permission"
       redirect_to root_path
@@ -64,8 +64,16 @@ module SessionsHelper
     current_user.admin? if logged_in?
   end
 
+  def verify_normal_user
+    if current_user.admin?
+      flash[:danger] = t "user.normal_only"
+      redirect_to admin_path
+    end
+  end
+
   def home_page
-    redirect_to admin_path if admin_user?
-    redirect_to user_path current_user
+    if logged_in?
+      redirect_to admin_user? ? admin_path : user_path(current_user)
+    end
   end
 end

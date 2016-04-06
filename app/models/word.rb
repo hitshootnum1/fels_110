@@ -4,6 +4,8 @@ class Word < ActiveRecord::Base
     ON lessons.id = lesson_words.lesson_id
     WHERE lessons.user_id = ?)"
 
+  attr_accessor :filter
+
   belongs_to :cagetory
 
   has_many :lesson_words, dependent: :destroy

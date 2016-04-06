@@ -3,7 +3,7 @@ class Admin::WordsController < Admin::DashboardController
   before_action :filter_words, only: :index
   before_action :find_word, only: [:edit, :update, :destroy]
   before_action :load_categories, only: [:index, :new, :edit]
-  before_action :find_category, only: :new
+  before_action :find_category, only: [:new, :create]
 
   def index
     @words ||=  Word.all
@@ -18,11 +18,12 @@ class Admin::WordsController < Admin::DashboardController
   def create
     @word = Word.new word_params
     if @word.save
-      flash[:success] = t "word.create"
+      flash[:success] = t "word.create_success"
       redirect_to root_path
     else
-      flash[:danger] = t "word.not_create"
-      redirect_to new_admin_word_path
+      flash.now[:danger] = t "word.create_error"
+      @categories = Category.all
+      render :new
     end
   end
 
@@ -68,14 +69,17 @@ class Admin::WordsController < Admin::DashboardController
   end
 
   def filter_words
+    @word = Word.new
     if params[:word].present?
-      content = params[:word][:content]
+      @content = params[:word][:content]
       if params[:word][:category_id].present?
         @category = Category.find_by id: params[:word][:category_id]
-        @words = @category.words.content_like content
+        @words = @category.words.content_like @content
+        @word.category_id = @category.id
       else
-        @words = Word.content_like content
+        @words = Word.content_like @content
       end
+      @word.content = @content
     end
   end
 end

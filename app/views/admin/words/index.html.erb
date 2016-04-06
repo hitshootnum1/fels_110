@@ -19,7 +19,11 @@
 <div class="row">
   <div class="col-md-8 col-md-offset-3">
     <ol class="words">
-      <%= render partial: "/words/word", collection: @words %>
+      <li class="word">
+        <div class="word-left-side"><%= t "word.content" %></div>
+        <div class="word-right-side"><%= t "word.answer" %></div>
+      </li>
+      <%= render @words %>
     </ol>
     <div class="row">
       <div class="col-md-8 col-md-offset-3"><%= will_paginate @words %></div>

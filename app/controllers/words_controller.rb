@@ -1,5 +1,6 @@
 class WordsController < ApplicationController
 
+  before_action :logged_in_user
   before_action :filter_words, only: :index
 
   def index
@@ -25,5 +26,8 @@ class WordsController < ApplicationController
   def filter_title
     @filter_name = @filter ? @filter : t("word.filter.all_words")
     @category_name = @category ? @category.name : t("category.all")
+    @word = Word.new
+    @word.category_id = @category.id if @category
+    @word.filter = @filter ? @filter : Settings.word_filter.last
   end
 end
