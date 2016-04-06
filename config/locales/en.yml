@@ -53,6 +53,7 @@ en:
     all: "All Users"
     isnt_authorized: "You dont have authorization to do it"
     isnt_permission: "You dont have permission to do it"
+    normal_only: "Only normal user can do this"
     follow: "follow"
     unfollow: "unfollow"
     following: "following"
